@@ -1,5 +1,5 @@
 "use client";
-import { Header } from "@/Components/Header";
+import { Header } from "@/Components/Header/Header";
 import { Hero } from "@/Components/Hero";
 import Preloader from "@/Components/Preloader";
 import { AnimatePresence } from "framer-motion";

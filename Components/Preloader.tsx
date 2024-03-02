@@ -52,7 +52,7 @@ export default function Preloader() {
     }
 
     return (
-        <motion.div variants={slideUp} initial="initial" exit="exit" className='h-screen w-screen flex items-center justify-center fixed z-50 bg-[#020d19]'>
+        <motion.div variants={slideUp} initial="initial" exit="exit" className='h-screen w-screen flex items-center justify-center fixed z-[60] bg-[#020d19]'>
             {dimension.width > 0 && (
                 <>
                     <motion.p variants={opacity} initial="initial" animate="enter" className='text-customwhite text-5xl flex items-center z-[100]'>
