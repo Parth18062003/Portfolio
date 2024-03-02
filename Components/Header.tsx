@@ -45,14 +45,14 @@ export function Header() {
         <div
           className={`${
             toggle ? "flex" : "hidden"
-          } p-6 bg-black absolute top-10 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar z-[1000] `}
+          } p-6 bg-black absolute top-10 right-0 mx-4 my-2 min-w-[140px] rounded-3xl sidebar z-[1000] `}
         >
           <ul className="list-none flex justify-end items-start flex-1 flex-col">
             {navItems.map((navItem, idx) => (
               <li
                 key={idx}
                 className={`font-poppins font-medium cursor-pointer text-[26px] ${
-                  active === navItem.name ? "text-white" : "text-gray-300"
+                  active === navItem.name ? "text-white" : "text-dimwhite"
                 } ${idx === navItems.length - 1 ? "mb-0" : "mb-4"}`}
                 onClick={() => {
                   setActive(navItem.name);
@@ -62,7 +62,7 @@ export function Header() {
                 <Link href={navItem.link}>{navItem.name}</Link>
               </li>
             ))}
-            <Link href="/contact" className="font-poppins font-medium cursor-pointer text-[26px] mt-4 text-gray-300">Contact</Link>
+            <Link href="/contact" className="font-poppins font-medium cursor-pointer text-[26px] mt-4 text-dimwhite">Contact</Link>
           </ul>
         </div>
       </div>

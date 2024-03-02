@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { SparklesCore } from "../Aceternity/sparkles";
+import Typewriter from "@/Aceternity/typewriter/typewriter";
 
 export function Hero() {
   return (
@@ -16,10 +17,10 @@ export function Hero() {
           particleColor="#FFFFFF"
         />
       </div>
-      <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20">
+      <h1 className="md:text-7xl text-5xl lg:text-9xl font-bold text-center text-customwhite relative z-20">
         Parth Kadam
       </h1>
-      
+      <div className="text-customwhite"><Typewriter /></div>
     </div>
   );
 }
