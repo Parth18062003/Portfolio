@@ -2,6 +2,7 @@
 import { SparklesCore } from "@/Aceternity/sparkles";
 import Link from "next/link";
 import { useRef, useEffect } from "react";
+import { TbChevronDown } from "react-icons/tb";
 
 export default function Home() {
   const container = useRef<HTMLDivElement>(null);
@@ -61,11 +62,16 @@ export default function Home() {
           <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20">
             Lost in Space
           </h1>
+          <div className="absolute top-[38rem] sm:top-[42rem] right-10 mr-4 mb-4 text-white text-right">
+            Scroll down<TbChevronDown className="inline text-lg" />
+          </div>
         </div>
       </div>
       <div className="flex flex-col items-center justify-center w-full h-screen">
         <h2 className="text-white">404 - Page Not Found</h2>
-        <Link href="/" className="text-dimwhite underline">Go back</Link>
+        <Link href="/" className="text-dimwhite underline">
+          Go back
+        </Link>
       </div>
     </main>
   );

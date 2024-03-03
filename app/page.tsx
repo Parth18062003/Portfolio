@@ -1,4 +1,5 @@
 "use client";
+import About from "@/Components/About";
 import { Header } from "@/Components/Header/Header";
 import { Hero } from "@/Components/Hero";
 import Preloader from "@/Components/Preloader";
@@ -13,7 +14,7 @@ export default function Home() {
       setTimeout(() => {
         setIsLoading(false);
         window.scrollTo(0, 0);
-      }, 2000);
+      }, 2500);
     })();
   }, []);
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       </AnimatePresence>
       <Header />
       <Hero />
+      <About />
     </>
   );
 }

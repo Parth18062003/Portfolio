@@ -9,7 +9,7 @@ export const opacity: Variants = {
     },
     enter: {
         opacity: 0.75,
-        transition: { duration: 1, delay: 0.2 }
+        transition: { duration: 1, delay: 0.1 }
     },
 };
 

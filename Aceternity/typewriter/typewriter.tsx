@@ -44,7 +44,7 @@ export default function Typewriter() {
 
   return (
     <>
-      <span className="md:text-5xl text-3xl lg:text-7xl fixed transform -translate-x-36 sm:-translate-x-[25rem]">
+      <span className="relative md:text-4xl text-3xl lg:text-6xl tracking-tighter">
         I am a <motion.span className="text-gradient">{displayText}</motion.span>
         <CursorBlinker />
       </span>
