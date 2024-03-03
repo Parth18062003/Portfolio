@@ -4,13 +4,13 @@ import React from "react";
 const TopHeader = () => {
   return (
     <>
-      <div className="hidden sm:flex flex-row items-center justify-between py-8 max-w-[83rem] mx-auto px-8 w-full relative z-[60]">
+      <div className="hidden sm:flex flex-row items-center justify-between py-8 max-w-[83rem] mx-auto px-8 w-full relative z-[50]">
         <div className="flex flex-row justify-between items-center space-x-1">
           <Link
             className="font-bold text-2xl tracking-normal text-customwhite"
             href="/"
           >
-            Parth Kadam
+            PK
           </Link>
         </div>
         <div className="lg:flex flex-row flex-1 hidden items-center  justify-center space-x-8 lg:space-x-14 text-sm text-customwhite font-medium hover:text-dimwhite transition duration-200">
@@ -44,13 +44,13 @@ const TopHeader = () => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
                 d="M10.75 8.75L14.25 12L10.75 15.25"
                 pathLength="1"
-                stroke-dashoffset="0px"
-                stroke-dasharray="1px 1px"
+                strokeDashoffset="0px"
+                strokeDasharray="1px 1px"
               ></path>
             </svg>
           </div>
@@ -60,7 +60,7 @@ const TopHeader = () => {
           <svg
             stroke="currentColor"
             fill="currentColor"
-            stroke-width="0"
+            strokeWidth="0"
             viewBox="0 0 512 512"
             height="1em"
             width="1em"
