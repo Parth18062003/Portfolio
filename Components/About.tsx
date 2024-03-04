@@ -7,7 +7,7 @@ import { TbDownload } from "react-icons/tb";
 const About: React.FC = () => {
   return (
     <>
-      <div className="text-center text-white font-semibold text-4xl sm:text-7xl translate-y-10">
+      <div className="text-center text-dimwhite font-semibold text-4xl sm:text-7xl translate-y-10">
         About me
       </div>
       <div className="container mx-auto px-4 py-8 lg:py-16 lg:flex lg:items-center max-h-[90vh] ">

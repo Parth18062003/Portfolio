@@ -3,6 +3,7 @@ import About from "@/Components/About";
 import { Header } from "@/Components/Header/Header";
 import { Hero } from "@/Components/Hero";
 import Preloader from "@/Components/Preloader";
+import { MacbookScrollDemo } from "@/Components/macbook-display";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -25,6 +26,7 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
+      <MacbookScrollDemo />
     </>
   );
 }
