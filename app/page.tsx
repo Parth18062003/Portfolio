@@ -3,7 +3,8 @@ import About from "@/Components/About";
 import { Header } from "@/Components/Header/Header";
 import { Hero } from "@/Components/Hero";
 import Preloader from "@/Components/Preloader";
-import { MacbookScrollDemo } from "@/Components/macbook-display";
+import { Macbook } from "@/Components/macbook-display";
+import { BackgroundGradientDemo } from "@/Components/project-cards";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -22,11 +23,12 @@ export default function Home() {
     <>
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
-      </AnimatePresence>
+      </AnimatePresence>{" "}
       <Header />
       <Hero />
       <About />
-      <MacbookScrollDemo />
+      <Macbook />
+      <BackgroundGradientDemo />
     </>
   );
 }

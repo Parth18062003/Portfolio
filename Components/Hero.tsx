@@ -28,7 +28,6 @@ export function Hero() {
 "use client";
 import React from "react";
 import { SparklesCore } from "../Aceternity/sparkles";
-import Typewriter from "@/Aceternity/typewriter/typewriter";
 import { BackgroundCellCore } from "@/Aceternity/BackgroundRipple";
 
 export function Hero() {
