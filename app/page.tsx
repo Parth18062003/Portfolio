@@ -5,6 +5,7 @@ import { Hero } from "@/Components/Hero";
 import Preloader from "@/Components/Preloader";
 import { Macbook } from "@/Components/macbook-display";
 import { BackgroundGradientDemo } from "@/Components/project-cards";
+import Lenis from "@studio-freight/lenis/types";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -18,6 +19,13 @@ export default function Home() {
         window.scrollTo(0, 0);
       }, 2500);
     })();
+
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
   }, []);
   return (
     <>

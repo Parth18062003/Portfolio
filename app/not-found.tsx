@@ -12,7 +12,7 @@ export default function Home() {
   const targetMaskSize = 30;
   const easing = 0.15;
   let easedScrollProgress = 0;
-
+  
   useEffect(() => {
     const animate = () => {
       const maskSizeProgress = targetMaskSize * getScrollProgress();

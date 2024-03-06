@@ -1,6 +1,15 @@
 "use client";
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  LazyMotion,
+  MotionValue,
+  domAnimation,
+  easeInOut,
+  motion,
+  m,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { cn } from "@/utils/cn";
 import {
   IconBrightnessDown,
@@ -24,7 +33,8 @@ import { IconCommand } from "@tabler/icons-react";
 import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
-import skills from "../public/Assets/skills-logos.png"
+import skills from "../public/Assets/skills-logos.png";
+import Lenis from "@studio-freight/lenis/types";
 
 export const MacbookScroll = ({
   src,
@@ -49,6 +59,13 @@ export const MacbookScroll = ({
     if (window && window.innerWidth < 768) {
       setIsMobile(true);
     }
+
+    const lenis = new Lenis();
+
+    function raf(time : number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
   }, []);
 
   const scaleX = useTransform(
@@ -61,15 +78,18 @@ export const MacbookScroll = ({
     [0, 0.3],
     [0.6, isMobile ? 1.8 : 1.5]
   );
-  const translate = useTransform(scrollYProgress, [0, 1], [0, 1400]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, 1500], {
+    ease: easeInOut, // Use easeInOut easing function for smoother scrolling
+  });
   const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
   const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <div
+    <LazyMotion features={domAnimation}>
+          <div
       ref={ref}
-      className="sm:min-h-[200vh] min-h-[180vh] max-h-[200vh] flex flex-col items-center sm:py-10 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.35] sm:scale-50"
+      className="sm:min-h-[200vh] min-h-[180vh] flex flex-col items-center sm:py-10 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.35] sm:scale-50"
     >
       <motion.h2
         style={{
@@ -78,11 +98,7 @@ export const MacbookScroll = ({
         }}
         className="dark:text-gradient text-gradient text-9xl sm:text-5xl font-bold mb-4 text-center"
       >
-        {title || (
-          <span>
-            Skills
-          </span>
-        )}
+        {title || <span>Skills</span>}
       </motion.h2>
       {/* Lid */}
       <Lid
@@ -117,6 +133,7 @@ export const MacbookScroll = ({
         {badge && <div className="absolute bottom-4 left-4">{badge}</div>}
       </div>
     </div>
+    </LazyMotion>
   );
 };
 
@@ -149,12 +166,12 @@ export const Lid = ({
           }}
           className="absolute inset-0 bg-[#010101] rounded-lg flex items-center justify-center"
         >
-{/*           <span className="text-white">
+          {/*           <span className="text-white">
             <AceternityLogo />
           </span> */}
         </div>
       </div>
-      <motion.div
+      <m.div
         style={{
           scaleX: scaleX,
           scaleY: scaleY,
@@ -173,7 +190,7 @@ export const Lid = ({
           height={2400}
           className="object-fill object-left-top absolute rounded-lg inset-0 h-full w-full"
         />
-      </motion.div>
+      </m.div>
     </div>
   );
 };
