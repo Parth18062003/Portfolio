@@ -1,33 +1,98 @@
-import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
+import { Link, Events, scrollSpy } from "react-scroll";
 
 const TopHeader = () => {
+  useEffect(() => {
+    // Registering the 'begin' event and logging it to the console when triggered.
+    Events.scrollEvent.register("begin", (to, element) => {
+      console.log("begin", to, element);
+    });
+
+    // Registering the 'end' event and logging it to the console when triggered.
+    Events.scrollEvent.register("end", (to, element) => {
+      console.log("end", to, element);
+    });
+
+    // Updating scrollSpy when the component mounts.
+    scrollSpy.update();
+
+    // Returning a cleanup function to remove the registered events when the component unmounts.
+    return () => {
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+    };
+  }, []);
+
+  const handleSetActive = (to: String) => {
+    console.log(to);
+  };
+
   return (
     <>
       <div className="hidden sm:flex flex-row items-center justify-between py-8 max-w-[83rem] mx-auto px-8 w-full relative z-[50]">
         <div className="flex flex-row justify-between items-center space-x-1">
           <Link
+            activeClass="active"
+            to="Hero"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            onSetActive={handleSetActive}
             className="font-bold text-2xl tracking-normal text-customwhite"
-            href="/"
           >
             PK
           </Link>
         </div>
         <div className="lg:flex flex-row flex-1 hidden items-center  justify-center space-x-8 lg:space-x-14 text-sm text-customwhite font-medium hover:text-dimwhite transition duration-200">
-          <Link href="/work">
+          <Link
+            to="Hero"
+            spy={true}
+            smooth={true}
+            offset={10}
+            duration={500}
+            onSetActive={handleSetActive}
+          >
             <span>Home</span>
           </Link>
-          <Link href="/#services">
+          <Link
+            to="About"
+            spy={true}
+            smooth={true}
+            offset={10}
+            duration={1500}
+            onSetActive={handleSetActive}
+          >
             <span>About</span>
           </Link>
-          <Link href="/pricing">
+          <Link
+            to="Skills"
+            spy={true}
+            smooth={true}
+            offset={10}
+            duration={2000}
+            onSetActive={handleSetActive}
+          >
             <span>Skills</span>
           </Link>
-          <Link href="/components">
+          <Link
+            to="Project"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={2500}
+            onSetActive={handleSetActive}
+          >
             <span>Projects</span>
           </Link>
         </div>
-        <button
+        <Link
+          to="Contact"
+          spy={true}
+          smooth={true}
+          offset={10}
+          duration={3000}
+          onSetActive={handleSetActive}
           className="bg-slate-900 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-customwhite hidden lg:inline-block"
         >
           <span className="absolute inset-0 overflow-hidden rounded-full">
@@ -55,7 +120,7 @@ const TopHeader = () => {
             </svg>
           </div>
           <span className="absolute left-[1.125rem] h-px w-[calc(100%-2.25rem)] -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent transition-opacity duration-500 group-hover:opacity-40"></span>
-        </button>
+        </Link>
         <div className="flex lg:hidden">
           <svg
             stroke="currentColor"

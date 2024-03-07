@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FloatingNav } from "../../Aceternity/floating-navbar";
 import Image from "next/image";
 import menu from "../../public/Assets/menu.svg";
 import close from "../../public/Assets/close.svg";
-import Link from "next/link";
+import { Link, Events, scrollSpy } from "react-scroll";
 import TopHeader from "./TopHeader";
 
 export function Header() {
@@ -13,24 +13,53 @@ export function Header() {
   const navItems = [
     {
       name: "Home",
-      link: "/",
+      link: "Hero",
+      duration: 500,
     },
     {
       name: "About",
-      link: "/about",
+      link: "About",
+      duration: 1500,
     },
     {
       name: "Skills",
-      link: "/skills",
+      link: "Skills",
+      duration: 2000,
     },
     {
       name: "Projects",
-      link: "/projects",
+      link: "Project",
+      duration: 2500,
     },
   ];
 
   const toggleMenu = () => {
     setToggle(!toggle);
+  };
+
+  useEffect(() => {
+    // Registering the 'begin' event and logging it to the console when triggered.
+    Events.scrollEvent.register("begin", (to, element) => {
+      console.log("begin", to, element);
+    });
+
+    // Registering the 'end' event and logging it to the console when triggered.
+    Events.scrollEvent.register("end", (to, element) => {
+      console.log("end", to, element);
+    });
+
+    // Updating scrollSpy when the component mounts.
+    scrollSpy.update();
+
+    // Returning a cleanup function to remove the registered events when the component unmounts.
+    return () => {
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+    };
+  }, []);
+
+  const handleSetActive = (to: String) => {
+    console.log(to);
   };
 
   return (
@@ -62,11 +91,25 @@ export function Header() {
                     toggleMenu();
                   }}
                 >
-                  <Link href={navItem.link}>{navItem.name}</Link>
+                  <Link
+                    to={navItem.link}
+                    spy={true}
+                    smooth={true}
+                    offset={10}
+                    duration={navItem.duration}
+                    onSetActive={handleSetActive}
+                  >
+                    <span>{navItem.name}</span>
+                  </Link>
                 </li>
               ))}
               <Link
-                href="/contact"
+                to="Contact"
+                spy={true}
+                smooth={true}
+                offset={10}
+                duration={3000}
+                onSetActive={handleSetActive}
                 className="font-poppins font-medium cursor-pointer text-[26px] mt-4 text-dimwhite"
               >
                 Contact

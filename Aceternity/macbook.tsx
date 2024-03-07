@@ -4,7 +4,6 @@ import {
   LazyMotion,
   MotionValue,
   domAnimation,
-  easeInOut,
   motion,
   m,
   useScroll,
@@ -34,7 +33,6 @@ import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import skills from "../public/Assets/skills-logos.png";
-import Lenis from "@studio-freight/lenis/types";
 
 export const MacbookScroll = ({
   src,
@@ -60,12 +58,6 @@ export const MacbookScroll = ({
       setIsMobile(true);
     }
 
-    const lenis = new Lenis();
-
-    function raf(time : number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
   }, []);
 
   const scaleX = useTransform(
@@ -78,9 +70,7 @@ export const MacbookScroll = ({
     [0, 0.3],
     [0.6, isMobile ? 1.8 : 1.5]
   );
-  const translate = useTransform(scrollYProgress, [0, 1], [0, 1500], {
-    ease: easeInOut, // Use easeInOut easing function for smoother scrolling
-  });
+  const translate = useTransform(scrollYProgress, [0, 1], [0, 1500]);
   const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
   const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
@@ -91,7 +81,7 @@ export const MacbookScroll = ({
       ref={ref}
       className="sm:min-h-[200vh] min-h-[180vh] flex flex-col items-center sm:py-10 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.35] sm:scale-50"
     >
-      <motion.h2
+      <m.h2
         style={{
           translateY: textTransform,
           opacity: textOpacity,
@@ -99,7 +89,7 @@ export const MacbookScroll = ({
         className="dark:text-gradient text-gradient text-9xl sm:text-5xl font-bold mb-4 text-center"
       >
         {title || <span>Skills</span>}
-      </motion.h2>
+      </m.h2>
       {/* Lid */}
       <Lid
         src={src}
