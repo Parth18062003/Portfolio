@@ -25,7 +25,7 @@ return (
     className="h-full absolute inset-0 overflow-x-hidden"
   >
     <div className="absolute h-[20rem] inset-y-0  overflow-hidden">
-      <div className="absolute h-full w-full pointer-events-none -bottom-2 z-40 bg-customblack [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
+      <div className="absolute h-full w-full pointer-events-none -bottom-2 z-40 bg-customwhite dark:bg-customblack [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
       <div
         className="absolute inset-0 z-20 bg-transparent"
         style={{

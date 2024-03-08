@@ -1,3 +1,4 @@
+import Toggle from "@/Aceternity/toggle-button";
 import React, { useEffect } from "react";
 import { Link, Events, scrollSpy } from "react-scroll";
 
@@ -39,12 +40,13 @@ const TopHeader = () => {
             offset={50}
             duration={500}
             onSetActive={handleSetActive}
-            className="font-bold text-2xl tracking-normal text-customwhite"
+            className="font-bold text-2xl tracking-normal text-customblack dark:text-customwhite"
           >
             PK
           </Link>
+          <Toggle />
         </div>
-        <div className="lg:flex flex-row flex-1 hidden items-center  justify-center space-x-8 lg:space-x-14 text-sm text-customwhite font-medium hover:text-dimwhite transition duration-200">
+        <div className="lg:flex flex-row flex-1 hidden items-center  justify-center space-x-8 lg:space-x-14 text-sm text-customblack dark:text-customwhite font-medium hover:text-gray-600 dark:hover:text-dimwhite transition duration-200">
           <Link
             to="Hero"
             spy={true}

@@ -70,7 +70,7 @@ export function BackgroundGradientDemo() {
 
   return (
     <>
-      <LazyMotion features={domAnimation}>
+    <LazyMotion features={domAnimation}>
         {" "}
         <m.div
           initial={{ opacity: 0 }}
@@ -90,7 +90,7 @@ export function BackgroundGradientDemo() {
                 key={index}
                 className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-8"
               >
-                <BackgroundGradient className="rounded-[22px] sm:max-w-sm p-4 bg-white dark:bg-zinc-900">
+                <BackgroundGradient className="rounded-[22px] sm:max-w-sm p-4 bg-gray-200 dark:bg-zinc-900">
                   <Image
                     src={item.src}
                     alt={item.title}
@@ -104,7 +104,7 @@ export function BackgroundGradientDemo() {
                   <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">
                     {item.description}
                   </p>
-                  <button className="px-6 py-2 bg--zinc-900 text-white rounded-lg font-bold transform hover:-translate-y-1 transition duration-400">
+                  <button className="px-6 py-2 bg--zinc-900 text-black dark:text-white rounded-lg font-bold transform hover:-translate-y-1 transition duration-400">
                     Live
                   </button>
                   <button className="relative inline-flex h-11 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">

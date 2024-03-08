@@ -3,11 +3,18 @@ import React, { useEffect, useState } from "react";
 import { FloatingNav } from "../../Aceternity/floating-navbar";
 import Image from "next/image";
 import menu from "../../public/Assets/menu.svg";
+import blackmenu from "../../public/Assets/blackmenu.svg";
 import close from "../../public/Assets/close.svg";
+import blackclose from "../../public/Assets/blackclose.svg";
 import { Link, Events, scrollSpy } from "react-scroll";
 import TopHeader from "./TopHeader";
+import Toggle from "@/Aceternity/toggle-button";
+import { useTheme } from "next-themes";
 
 export function Header() {
+  const { theme } = useTheme()
+  const lightclose = theme === 'light' ? blackclose : close; 
+  const lightmenu = theme === 'light' ? blackmenu : menu;
   const [toggle, setToggle] = useState(false);
   const [active, setActive] = useState("Home");
   const navItems = [
@@ -64,12 +71,15 @@ export function Header() {
 
   return (
     <>
-      <div className="relative w-full">
+      <div className="w-full flex items-center justify-between">
+      <div className="block sm:hidden z-50">
+          <Toggle />
+        </div>
         <TopHeader />
         <FloatingNav navItems={navItems} />
         <div className="sm:hidden flex justify-end items-center p-4">
           <Image
-            src={toggle ? close : menu}
+            src={toggle ? lightclose : lightmenu}
             alt="menu"
             className="w-[28px] h-[28px] mx-4 object-contain cursor-pointer z-[80]"
             onClick={toggleMenu}

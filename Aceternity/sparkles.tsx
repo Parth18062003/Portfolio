@@ -6,7 +6,6 @@ import type { Container, SingleOrMultiple } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { cn } from "@/utils/cn";
 import {
-  motion,
   useAnimation,
   m,
   LazyMotion,

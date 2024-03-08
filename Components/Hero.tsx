@@ -2,13 +2,15 @@
 import React from "react";
 import { SparklesCore } from "../Aceternity/sparkles";
 import { BackgroundCellCore } from "@/Aceternity/BackgroundRipple";
+import { useTheme } from "next-themes";
 
 export function Hero() {
-  
+  const { theme } = useTheme();
+  const particleColor = theme === 'light' ? '#000000' : '#FFFFFF'; 
   return (
-    <div className="h-[40rem] w-full bg-customblack flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className=" h-[40rem] w-full bg-customwhite dark:bg-customblack flex flex-col items-center justify-center overflow-hidden rounded-md">
       <BackgroundCellCore />
-      <h1 className="mt-12 md:text-7xl text-7xl lg:text-9xl font-bold text-center text-dimwhite relative z-40">
+      <h1 className="mt-12 md:text-7xl text-7xl lg:text-9xl font-bold text-center text-neutral-900 dark:text-dimwhite relative z-40">
         Parth Kadam
       </h1>
       <div className="w-[40rem] h-40 relative">
@@ -25,11 +27,11 @@ export function Hero() {
           maxSize={1}
           particleDensity={1200}
           className="w-full h-full"
-          particleColor="#FFFFFF"
+          particleColor={particleColor}
         />
 
         {/* Radial Gradient to prevent sharp edges */}
-        <div className="absolute inset-0 w-full h-full bg-customblack [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+        <div className="absolute inset-0 w-full h-full bg-customwhite dark:bg-customblack [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
 import About from "@/Components/About";
+import Footer from "@/Components/Footer";
 import { Header } from "@/Components/Header/Header";
 import { Hero } from "@/Components/Hero";
 import Preloader from "@/Components/Preloader";
@@ -37,7 +38,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="fixed bottom-8 right-8 z-50">
+    <div className="fixed bottom-8 right-8 z-50">
         <a onClick={scrollToTop} className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white text-4xl transition duration-300 ease-in-out hover:bg-gray-700 hover:text-gray-300"> 
           <TbChevronUp />
         </a>
@@ -45,7 +46,9 @@ export default function Home() {
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
-      <StickyCursor />
+      <div className="hidden md:block">
+        <StickyCursor />
+      </div>
       <Header />
       <Element name="Hero" className="element">
         <Hero />
@@ -62,6 +65,7 @@ export default function Home() {
       <Element name="Contact" className="element">
         <SignupFormDemo />
       </Element>
+      <Footer />
     </>
   );
 }
