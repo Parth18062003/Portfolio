@@ -10,13 +10,8 @@ import {
   Element,
   animateScroll,
 } from "react-scroll";
-//import dynamic from 'next/dynamic'
 import About from "@/Components/About";
 import BackgroundGradientDemo from "@/Components/project-cards";
-
-/* const AboutComponent = dynamic(() => import('@/Components/About'), { ssr: false }); */
-
-/* const ProjectComponent = dynamic(() => import('@/Components/project-cards'), { ssr: false }); */
 
 export default function Home() {
 
@@ -43,14 +38,12 @@ export default function Home() {
         <Hero />
       </Element>
       <Element name="About" className="element">
-        {/* <AboutComponent /> */}
         <About />
       </Element>
       <Element name="Skills" className="element">
         <Macbook />
       </Element>
       <Element name="Project" className="element">
-        {/* <ProjectComponent /> */}
         <BackgroundGradientDemo />
       </Element>
       <Element name="Contact" className="element">
