@@ -3,8 +3,8 @@
 import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "../3d-Card/3d-card";
-import Gojo from "../../public/Assets/MeFr.png"
-import Gojo2 from "../../public/Assets/Gojo.png"
+import Gojo from "../../public/Assets/MeFr.webp"
+import Gojo2 from "../../public/Assets/Gojo.webp"
 import { useTheme } from "next-themes";
 
 export function ThreeDCard() {

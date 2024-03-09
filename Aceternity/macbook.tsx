@@ -7,9 +7,9 @@ import {
   useTransform,
 } from "framer-motion";
 import Image from "next/image";
-import skills from "../public/Assets/skills-logos.png";
-import darkbase from "../public/Assets/darkbase.png"
-import base from "../public/Assets/base.png"
+import skills from "../public/Assets/skills-logos.webp";
+import darkbase from "../public/Assets/darkbase.webp"
+import base from "../public/Assets/base.webp"
 import { useTheme } from "next-themes";
 
 export const MacbookScroll = ({

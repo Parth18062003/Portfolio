@@ -20,7 +20,7 @@ const AboutComponent = dynamic(() => import('@/Components/About'), { ssr: false 
 const ProjectComponent = dynamic(() => import('@/Components/project-cards'), { ssr: false });
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+/*   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -29,7 +29,7 @@ export default function Home() {
         window.scrollTo(0, 0);
       }, 2500);
     })();
-  }, []);
+  }, []); */
 
   const options = {
     duration: 3000,
@@ -46,9 +46,9 @@ export default function Home() {
           <TbChevronUp />
         </a>
       </div>
-      <AnimatePresence mode="wait">
+{/*        <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
-      </AnimatePresence>
+      </AnimatePresence>  */} 
       <div className="hidden md:block">
         <StickyCursor />
       </div>

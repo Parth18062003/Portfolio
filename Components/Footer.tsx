@@ -20,6 +20,7 @@ const Footer = () => {
           <ul className="translate-y-6 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
             <li>
               <Link
+                href="#Hero"
                 to="Hero"
                 spy={true}
                 offset={50}
@@ -34,6 +35,7 @@ const Footer = () => {
 
             <li>
               <Link
+                href="#About"
                 to="About"
                 spy={true}
                 offset={50}
@@ -48,6 +50,7 @@ const Footer = () => {
 
             <li>
               <Link
+                href="#Skills"
                 to="Skills"
                 spy={true}
                 offset={50}
@@ -62,6 +65,7 @@ const Footer = () => {
 
             <li>
               <Link
+                href="#Project"
                 to="Project"
                 spy={true}
                 offset={50}
@@ -84,7 +88,10 @@ const Footer = () => {
             </li>
 
             <li>
-              <a href="www.linkedin.com/in/parth-kadam-7b27a2224" target="_blank">
+              <a
+                href="www.linkedin.com/in/parth-kadam-7b27a2224"
+                target="_blank"
+              >
                 <span className="sr-only">Linkedin</span>
                 <TbBrandLinkedin className="h-8 w-8 text-black dark:text-white" />
               </a>
@@ -92,8 +99,8 @@ const Footer = () => {
 
             <li>
               <a href="https://github.com/Parth18062003" target="_blank">
-              <span className="sr-only">GitHub</span>
-              <BiLogoGithub className="h-8 w-8 text-black dark:text-white" />
+                <span className="sr-only">GitHub</span>
+                <BiLogoGithub className="h-8 w-8 text-black dark:text-white" />
               </a>
             </li>
           </ul>

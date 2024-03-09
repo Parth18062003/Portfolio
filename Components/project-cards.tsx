@@ -9,7 +9,7 @@ import {
 } from "framer-motion";
 import { BackgroundGradient } from "../Aceternity/background-card";
 import Image from "next/image";
-import image2 from "../public/Assets/itachi.jpg";
+import image2 from "../public/Assets/AiSummarizer.png";
 import Link from "next/link";
 
 export function BackgroundGradientDemo() {
@@ -105,6 +105,7 @@ export function BackgroundGradientDemo() {
                     width={1200}
                     className="w-full"
                     loading="lazy"
+                    fetchPriority="low"
                   />
                   <p className="text-base sm:text-xl text-black mt-4 mb-1 dark:text-neutral-200">
                     {item.title}

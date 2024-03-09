@@ -2,19 +2,21 @@ import dynamic from "next/dynamic";
 import React, { useEffect } from "react";
 import { Link, Events, scrollSpy } from "react-scroll";
 
-const ToggleComponent = dynamic(() => import("@/Aceternity/toggle-button"), {ssr: false});
+const ToggleComponent = dynamic(() => import("@/Aceternity/toggle-button"), {
+  ssr: false,
+});
 
 const TopHeader = () => {
-
   const handleSetActive = (to: String) => {
-    console.log(to);
+     console.log(to);
   };
 
   return (
     <>
-      <div className="hidden sm:flex flex-row items-center justify-between py-8 max-w-[83rem] mx-auto px-8 w-full relative z-[50]">
+      <nav className="hidden sm:flex flex-row items-center justify-between py-8 max-w-[83rem] mx-auto px-8 w-full relative z-[50]">
         <div className="flex flex-row justify-between items-center space-x-1">
           <Link
+            href="#Hero"
             activeClass="active"
             to="Hero"
             spy={true}
@@ -30,6 +32,7 @@ const TopHeader = () => {
         </div>
         <div className="lg:flex flex-row flex-1 hidden items-center  justify-center space-x-8 lg:space-x-14 text-sm text-customblack dark:text-customwhite font-medium hover:text-gray-600 dark:hover:text-dimwhite transition duration-200">
           <Link
+            href="#Hero"
             to="Hero"
             spy={true}
             smooth={true}
@@ -40,6 +43,7 @@ const TopHeader = () => {
             <span>Home</span>
           </Link>
           <Link
+            href="#About"
             to="About"
             spy={true}
             smooth={true}
@@ -50,6 +54,7 @@ const TopHeader = () => {
             <span>About</span>
           </Link>
           <Link
+            href="#Skills"
             to="Skills"
             spy={true}
             smooth={true}
@@ -60,6 +65,7 @@ const TopHeader = () => {
             <span>Skills</span>
           </Link>
           <Link
+            href="#Project"
             to="Project"
             spy={true}
             smooth={true}
@@ -71,6 +77,7 @@ const TopHeader = () => {
           </Link>
         </div>
         <Link
+          href="#Contact"
           to="Contact"
           spy={true}
           smooth={true}
@@ -118,7 +125,7 @@ const TopHeader = () => {
             <path d="M432 176H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 272H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 368H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16z"></path>
           </svg>
         </div>
-      </div>
+      </nav>
     </>
   );
 };

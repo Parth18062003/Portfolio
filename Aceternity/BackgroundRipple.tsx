@@ -61,8 +61,8 @@ const Pattern = ({
   className?: string;
   cellClassName?: string;
 }) => {
-  const x = new Array(47).fill(0);
-  const y = new Array(30).fill(0);
+  const x = new Array(35).fill(0);
+  const y = new Array(10).fill(0);
   const matrix = x.map((_, i) => y.map((_, j) => [i, j]));
   const [clickedCell, setClickedCell] = useState<any>(null);
 
@@ -71,7 +71,7 @@ const Pattern = ({
       {matrix.map((row, rowIdx) => (
         <div
           key={`matrix-row-${rowIdx}`}
-          className="flex flex-col  relative z-20 border-b"
+          className="flex flex-col relative z-20 border-b"
         >
           {row.map((column, colIdx) => {
             const controls = useAnimation();
@@ -91,7 +91,7 @@ const Pattern = ({
 
             return (
               <div
-                key={`matrix-col-${colIdx}`}
+                key={`matrix-col-${colIdx/4}`}
                 className={cn(
                   "bg-transparent border-l border-b border-neutral-600",
                   cellClassName

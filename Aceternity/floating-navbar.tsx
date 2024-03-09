@@ -50,7 +50,6 @@ export const FloatingNav = ({
   return (
     <>
       <LazyMotion features={domAnimation}>
-        {" "}
         <AnimatePresence mode="wait">
           <m.div
             initial={{
@@ -71,6 +70,7 @@ export const FloatingNav = ({
           >
             {navItems.map((navItem: any, idx: number) => (
               <Link
+                href={`#${navItem.link}`}
                 key={`link=${idx}`}
                 to={navItem.link}
                 spy={true}

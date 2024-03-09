@@ -11,12 +11,14 @@ import TopHeader from "./TopHeader";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 
-const ToggleComponent = dynamic(() => import("@/Aceternity/toggle-button"), {ssr: false});
+const ToggleComponent = dynamic(() => import("@/Aceternity/toggle-button"), {
+  ssr: false,
+});
 
 export function Header() {
-  const { theme } = useTheme()
-  const lightclose = theme === 'light' ? blackclose : close; 
-  const lightmenu = theme === 'light' ? blackmenu : menu;
+  const { theme } = useTheme();
+  const lightclose = theme === "light" ? blackclose : close;
+  const lightmenu = theme === "light" ? blackmenu : menu;
   const [toggle, setToggle] = useState(false);
   const [active, setActive] = useState("Home");
   const navItems = [
@@ -46,27 +48,6 @@ export function Header() {
     setToggle(!toggle);
   };
 
-  useEffect(() => {
-    // Registering the 'begin' event and logging it to the console when triggered.
-    Events.scrollEvent.register("begin", (to, element) => {
-      console.log("begin", to, element);
-    });
-
-    // Registering the 'end' event and logging it to the console when triggered.
-    Events.scrollEvent.register("end", (to, element) => {
-      console.log("end", to, element);
-    });
-
-    // Updating scrollSpy when the component mounts.
-    scrollSpy.update();
-
-    // Returning a cleanup function to remove the registered events when the component unmounts.
-    return () => {
-      Events.scrollEvent.remove("begin");
-      Events.scrollEvent.remove("end");
-    };
-  }, []);
-
   const handleSetActive = (to: String) => {
     console.log(to);
   };
@@ -74,12 +55,12 @@ export function Header() {
   return (
     <>
       <div className="w-full flex items-center justify-between">
-      <div className="block sm:hidden z-50">
+        <div className="block sm:hidden z-50">
           <ToggleComponent />
         </div>
         <TopHeader />
         <FloatingNav navItems={navItems} />
-        <div className="sm:hidden flex justify-end items-center p-4">
+        <nav className="sm:hidden flex justify-end items-center p-4">
           <Image
             src={toggle ? lightclose : lightmenu}
             alt="menu"
@@ -104,6 +85,7 @@ export function Header() {
                   }}
                 >
                   <Link
+                    href={`#${navItem.link}`}
                     to={navItem.link}
                     spy={true}
                     smooth={true}
@@ -128,7 +110,7 @@ export function Header() {
               </Link>
             </ul>
           </div>
-        </div>
+        </nav>
       </div>
     </>
   );

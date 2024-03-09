@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Label } from "../Aceternity/Form/label";
 import { Input, Textarea } from "../Aceternity/Form/input";
 import { cn } from "@/utils/cn";

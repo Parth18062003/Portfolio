@@ -45,8 +45,10 @@ export default function Typewriter() {
   return (
     <>
       <span className="relative md:text-4xl text-3xl lg:text-5xl tracking-tighter">
-        I am a <m.span className="text-gradientDark dark:text-gradient">{displayText}</m.span>
+        I am a <div className="inline-flex w-[20rem] sm:w-[30rem] overflow-hidden">
+        <m.span className="text-gradientDark dark:text-gradient">{displayText}</m.span>
         <CursorBlinker />
+        </div>
       </span>
     </>
   );
