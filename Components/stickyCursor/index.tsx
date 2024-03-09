@@ -48,7 +48,7 @@ export default function Index() {
             left: smoothMouse.x as MotionValue<number>, // Type assertion needed here
             top: smoothMouse.y as MotionValue<number>, // Type assertion needed here
           }}
-          className="fixed w-4 h-4 bg-white rounded-full pointer-events-none z-10 shadow-2xl shadow-zinc-900"
+          className="fixed w-4 h-4 bg-black dark:bg-white rounded-full pointer-events-none z-10 shadow-2xl shadow-zinc-900"
         />
       </LazyMotion>
     </div>

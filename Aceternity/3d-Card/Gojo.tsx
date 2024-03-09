@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { use } from "react";
+import React from "react";
 import { CardBody, CardContainer, CardItem } from "../3d-Card/3d-card";
 import Gojo from "../../public/Assets/MeFr.png"
 import Gojo2 from "../../public/Assets/Gojo.png"
@@ -16,10 +16,11 @@ export function ThreeDCard() {
         <CardItem translateZ="100" className="w-full mt-4">
           <Image
             src={src}
-            height="1000"
-            width="1000"
+            height={1000}
+            width={1000}
             className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
             alt="Nah I'd win"
+            priority={true}
           />
         </CardItem>
       </CardBody>

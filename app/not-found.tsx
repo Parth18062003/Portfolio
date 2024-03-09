@@ -3,8 +3,21 @@ import { SparklesCore } from "@/Aceternity/sparkles";
 import Link from "next/link";
 import { useRef, useEffect } from "react";
 import { TbChevronDown } from "react-icons/tb";
+import {
+  Element,
+  animateScroll,
+} from "react-scroll";
 
 export default function Home() {
+
+  const options = {
+    duration: 3500,
+    smooth: true
+  }
+  const scrollToBottom = () => {
+    animateScroll.scrollToBottom(options);
+  };
+
   const container = useRef<HTMLDivElement>(null);
   const stickyMask = useRef<HTMLDivElement>(null);
 
@@ -45,6 +58,7 @@ export default function Home() {
         <div ref={stickyMask} className="stickyMask">
           <video autoPlay loop muted>
             <source src="/Assets/space.mp4" />
+            Your browser does not support the video tag.
           </video>
         </div>
         <div className=" w-full bg-black flex flex-col overflow-hidden rounded-md">
@@ -63,7 +77,7 @@ export default function Home() {
             Lost in Space
           </h1>
           <div className="absolute top-[38rem] sm:top-[42rem] right-10 mr-4 mb-4 text-white text-right">
-            Scroll down<TbChevronDown className="inline text-lg" />
+            <a onClick={scrollToBottom}>Scroll down<TbChevronDown className="inline text-lg" /></a>
           </div>
         </div>
       </div>

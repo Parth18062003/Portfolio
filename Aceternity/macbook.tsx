@@ -1,49 +1,23 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import {
-  LazyMotion,
   MotionValue,
-  domAnimation,
-  motion,
   m,
   useScroll,
   useTransform,
 } from "framer-motion";
-import { cn } from "@/utils/cn";
-import {
-  IconBrightnessDown,
-  IconBrightnessUp,
-  IconCaretRightFilled,
-  IconCaretUpFilled,
-  IconChevronUp,
-  IconMicrophone,
-  IconMoon,
-  IconPlayerSkipForward,
-  IconPlayerTrackNext,
-  IconPlayerTrackPrev,
-  IconTable,
-  IconVolume,
-  IconVolume2,
-  IconVolume3,
-} from "@tabler/icons-react";
-import { IconSearch } from "@tabler/icons-react";
-import { IconWorld } from "@tabler/icons-react";
-import { IconCommand } from "@tabler/icons-react";
-import { IconCaretLeftFilled } from "@tabler/icons-react";
-import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import skills from "../public/Assets/skills-logos.png";
+import darkbase from "../public/Assets/darkbase.png"
+import base from "../public/Assets/base.png"
+import { useTheme } from "next-themes";
 
 export const MacbookScroll = ({
   src,
-  showGradient,
   title,
-  badge,
 }: {
   src?: string;
-  showGradient?: boolean;
   title?: string | React.ReactNode;
-  badge?: React.ReactNode;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -53,11 +27,13 @@ export const MacbookScroll = ({
 
   const [isMobile, setIsMobile] = useState(false);
 
+  const { theme } = useTheme();
+  const baseSrc = theme === "light" ? base : darkbase;  
+  
   useEffect(() => {
     if (window && window.innerWidth < 768) {
       setIsMobile(true);
     }
-
   }, []);
 
   const scaleX = useTransform(
@@ -76,8 +52,7 @@ export const MacbookScroll = ({
   const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <LazyMotion features={domAnimation}>
-          <div
+    <div
       ref={ref}
       className="sm:min-h-[200vh] min-h-[180vh] flex flex-col items-center sm:py-10 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.35] sm:scale-50"
     >
@@ -86,7 +61,7 @@ export const MacbookScroll = ({
           translateY: textTransform,
           opacity: textOpacity,
         }}
-        className="dark:text-gradient text-gradient text-9xl sm:text-5xl font-bold mb-4 text-center"
+        className="dark:text-gradient text-gradientDark text-9xl sm:text-5xl font-bold mb-4 text-center"
       >
         {title || <span>Skills</span>}
       </m.h2>
@@ -99,8 +74,8 @@ export const MacbookScroll = ({
         translate={translate}
       />
       {/* Base area */}
-      <div className="h-[22rem] w-[32rem]  bg-gray-200 dark:bg-[#272729] rounded-2xl overflow-hidden relative -z-10">
-        {/* above keyboard bar */}
+      <Image src={baseSrc} alt="programming logos" width={2500} height={2500} className="h-[22rem] w-[32rem]" />
+{/*       <div className="h-[22rem] w-[32rem]  bg-gray-200 dark:bg-[#272729] rounded-2xl overflow-hidden relative -z-10">
         <div className="h-10 w-full relative">
           <div className="absolute inset-x-0 mx-auto w-[80%] h-4 bg-[#050505]" />
         </div>
@@ -120,10 +95,8 @@ export const MacbookScroll = ({
         {showGradient && (
           <div className="h-40 w-full absolute bottom-0 inset-x-0 bg-gradient-to-t dark:from-black from-white via-white dark:via-black to-transparent z-50"></div>
         )}
-        {badge && <div className="absolute bottom-4 left-4">{badge}</div>}
-      </div>
+      </div> */}
     </div>
-    </LazyMotion>
   );
 };
 
@@ -176,16 +149,17 @@ export const Lid = ({
         <Image
           src={skills}
           alt="programming logos"
-          width={2400}
-          height={2400}
-          className="object-fill object-left-top absolute rounded-lg inset-0 h-full w-full"
+          width={1400}
+          height={1400}
+          loading="lazy"
+          className="contain object-left-top absolute rounded-lg inset-0 h-full w-full"
         />
       </m.div>
     </div>
   );
 };
 
-export const Trackpad = () => {
+/* export const Trackpad = () => {
   return (
     <div
       className="w-[40%] mx-auto h-32  rounded-xl my-1"
@@ -194,12 +168,11 @@ export const Trackpad = () => {
       }}
     ></div>
   );
-};
+}; */
 
-export const Keypad = () => {
+/* export const Keypad = () => {
   return (
     <div className="h-full rounded-md bg-[#050505] mx-1 p-1">
-      {/* First Row */}
       <Row>
         <KBtn
           className="w-10 items-end justify-start pl-[4px] pb-[2px]"
@@ -263,7 +236,6 @@ export const Keypad = () => {
         </KBtn>
       </Row>
 
-      {/* Second row */}
       <Row>
         <KBtn>
           <span className="block">~</span>
@@ -326,7 +298,6 @@ export const Keypad = () => {
         </KBtn>
       </Row>
 
-      {/* Third row */}
       <Row>
         <KBtn
           className="w-10 items-end justify-start pl-[4px] pb-[2px]"
@@ -379,7 +350,6 @@ export const Keypad = () => {
         </KBtn>
       </Row>
 
-      {/* Fourth Row */}
       <Row>
         <KBtn
           className="w-[2.8rem] items-end justify-start pl-[4px] pb-[2px]"
@@ -431,7 +401,6 @@ export const Keypad = () => {
         </KBtn>
       </Row>
 
-      {/* Fifth Row */}
       <Row>
         <KBtn
           className="w-[3.65rem] items-end justify-start pl-[4px] pb-[2px]"
@@ -480,7 +449,6 @@ export const Keypad = () => {
         </KBtn>
       </Row>
 
-      {/* sixth Row */}
       <Row>
         <KBtn className="" childrenClassName="h-full justify-between py-[4px]">
           <div className="flex justify-end w-full pr-1">
@@ -556,8 +524,8 @@ export const Keypad = () => {
       </Row>
     </div>
   );
-};
-export const KBtn = ({
+}; */
+/* export const KBtn = ({
   className,
   children,
   childrenClassName,
@@ -597,17 +565,17 @@ export const KBtn = ({
       </div>
     </div>
   );
-};
+}; */
 
-export const Row = ({ children }: { children: React.ReactNode }) => {
+/* export const Row = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex gap-[2px] mb-[2px] w-full flex-shrink-0">
       {children}
     </div>
   );
-};
+}; */
 
-export const SpeakerGrid = () => {
+/* export const SpeakerGrid = () => {
   return (
     <div
       className="flex px-[0.5px] gap-[2px] mt-2 h-40"
@@ -618,9 +586,9 @@ export const SpeakerGrid = () => {
       }}
     ></div>
   );
-};
+}; */
 
-export const OptionKey = ({ className }: { className: string }) => {
+/* export const OptionKey = ({ className }: { className: string }) => {
   return (
     <svg
       fill="none"
@@ -653,7 +621,7 @@ export const OptionKey = ({ className }: { className: string }) => {
     </svg>
   );
 };
-
+ */
 /* const AceternityLogo = () => {
   return (
     <svg

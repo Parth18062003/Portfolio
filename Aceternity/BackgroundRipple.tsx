@@ -1,64 +1,63 @@
-
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { LazyMotion, domAnimation, m, useAnimation } from "framer-motion";
 import { cn } from "@/utils/cn";
 
 export const BackgroundCellCore = () => {
-const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-const ref = useRef<any>(null);
+  const ref = useRef<any>(null);
 
-const handleMouseMove = (event: any) => {
-  const rect = ref.current && ref.current.getBoundingClientRect();
-  setMousePosition({
-    x: event.clientX - rect.left,
-    y: event.clientY - rect.top,
-  });
-};
+  const handleMouseMove = (event: any) => {
+    const rect = ref.current && ref.current.getBoundingClientRect();
+    setMousePosition({
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    });
+  };
 
-const size = 300;
-return (
-  <div
-    ref={ref}
-    onMouseMove={handleMouseMove}
-    className="h-full absolute inset-0 overflow-x-hidden"
-  >
-    <div className="absolute h-[20rem] inset-y-0  overflow-hidden">
-      <div className="absolute h-full w-full pointer-events-none -bottom-2 z-40 bg-customwhite dark:bg-customblack [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
-      <div
-        className="absolute inset-0 z-20 bg-transparent"
-        style={{
-          maskImage: `radial-gradient(
+  const size = 300;
+  return (
+    <div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      className="h-full absolute inset-0 overflow-x-hidden"
+    >
+      <div className="absolute h-[20rem] inset-y-0  overflow-hidden">
+        <div className="absolute h-full w-full pointer-events-none -bottom-2 z-40 bg-customwhite dark:bg-customblack [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
+        <div
+          className="absolute inset-0 z-20 bg-transparent"
+          style={{
+            maskImage: `radial-gradient(
             ${size / 4}px circle at center,
            white, transparent
           )`,
-          WebkitMaskImage: `radial-gradient(
+            WebkitMaskImage: `radial-gradient(
           ${size / 4}px circle at center,
           white, transparent
         )`,
-          WebkitMaskPosition: `${mousePosition.x - size / 2}px ${
-            mousePosition.y - size / 2
-          }px`,
-          WebkitMaskSize: `${size}px`,
-          maskSize: `${size}px`,
-          pointerEvents: "none",
-          maskRepeat: "no-repeat",
-          WebkitMaskRepeat: "no-repeat",
-        }}
-      >
-        <Pattern cellClassName="border-blue-600 relative z-[100]" />
+            WebkitMaskPosition: `${mousePosition.x - size / 2}px ${
+              mousePosition.y - size / 2
+            }px`,
+            WebkitMaskSize: `${size}px`,
+            maskSize: `${size}px`,
+            pointerEvents: "none",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+          }}
+        >
+          <Pattern cellClassName="border-blue-600 relative z-[100]" />
+        </div>
+        <Pattern className="opacity-[0.5]" cellClassName="border-neutral-700" />
       </div>
-      <Pattern className="opacity-[0.5]" cellClassName="border-neutral-700" />
     </div>
-  </div>
-);
+  );
 };
 
 const Pattern = ({
   className,
   cellClassName,
-  }: {
+}: {
   className?: string;
   cellClassName?: string;
 }) => {
@@ -99,20 +98,22 @@ const Pattern = ({
                 )}
                 onClick={() => setClickedCell([rowIdx, colIdx])}
               >
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                  }}
-                  whileHover={{
-                    opacity: [0, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 0.5,
-                    ease: "backOut",
-                  }}
-                  animate={controls}
-                 className="bg-[rgba(14,165,233,0.3)] h-12 w-12" //  rgba(14, 165, 233, 0.15) for a more subtle effect
-                ></motion.div>
+                <LazyMotion features={domAnimation}>
+                  <m.div
+                    initial={{
+                      opacity: 0,
+                    }}
+                    whileHover={{
+                      opacity: [0, 1, 0.5],
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "backOut",
+                    }}
+                    animate={controls}
+                    className="bg-[rgba(14,165,233,0.3)] h-12 w-12" //  rgba(14, 165, 233, 0.15) for a more subtle effect
+                  ></m.div>
+                </LazyMotion>
               </div>
             );
           })}
@@ -121,5 +122,3 @@ const Pattern = ({
     </div>
   );
 };
-
-

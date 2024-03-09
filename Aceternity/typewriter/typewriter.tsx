@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { m, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 import CursorBlinker from "./cursor";
 
@@ -44,8 +44,8 @@ export default function Typewriter() {
 
   return (
     <>
-      <span className="relative md:text-4xl text-3xl lg:text-6xl tracking-tighter">
-        I am a <motion.span className="text-gradient">{displayText}</motion.span>
+      <span className="relative md:text-4xl text-3xl lg:text-5xl tracking-tighter">
+        I am a <m.span className="text-gradientDark dark:text-gradient">{displayText}</m.span>
         <CursorBlinker />
       </span>
     </>

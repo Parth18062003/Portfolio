@@ -8,8 +8,10 @@ import close from "../../public/Assets/close.svg";
 import blackclose from "../../public/Assets/blackclose.svg";
 import { Link, Events, scrollSpy } from "react-scroll";
 import TopHeader from "./TopHeader";
-import Toggle from "@/Aceternity/toggle-button";
 import { useTheme } from "next-themes";
+import dynamic from "next/dynamic";
+
+const ToggleComponent = dynamic(() => import("@/Aceternity/toggle-button"), {ssr: false});
 
 export function Header() {
   const { theme } = useTheme()
@@ -73,7 +75,7 @@ export function Header() {
     <>
       <div className="w-full flex items-center justify-between">
       <div className="block sm:hidden z-50">
-          <Toggle />
+          <ToggleComponent />
         </div>
         <TopHeader />
         <FloatingNav navItems={navItems} />

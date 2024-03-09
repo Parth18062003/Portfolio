@@ -1,28 +1,10 @@
-import Toggle from "@/Aceternity/toggle-button";
+import dynamic from "next/dynamic";
 import React, { useEffect } from "react";
 import { Link, Events, scrollSpy } from "react-scroll";
 
+const ToggleComponent = dynamic(() => import("@/Aceternity/toggle-button"), {ssr: false});
+
 const TopHeader = () => {
-  useEffect(() => {
-    // Registering the 'begin' event and logging it to the console when triggered.
-    Events.scrollEvent.register("begin", (to, element) => {
-      console.log("begin", to, element);
-    });
-
-    // Registering the 'end' event and logging it to the console when triggered.
-    Events.scrollEvent.register("end", (to, element) => {
-      console.log("end", to, element);
-    });
-
-    // Updating scrollSpy when the component mounts.
-    scrollSpy.update();
-
-    // Returning a cleanup function to remove the registered events when the component unmounts.
-    return () => {
-      Events.scrollEvent.remove("begin");
-      Events.scrollEvent.remove("end");
-    };
-  }, []);
 
   const handleSetActive = (to: String) => {
     console.log(to);
@@ -44,7 +26,7 @@ const TopHeader = () => {
           >
             PK
           </Link>
-          <Toggle />
+          <ToggleComponent />
         </div>
         <div className="lg:flex flex-row flex-1 hidden items-center  justify-center space-x-8 lg:space-x-14 text-sm text-customblack dark:text-customwhite font-medium hover:text-gray-600 dark:hover:text-dimwhite transition duration-200">
           <Link

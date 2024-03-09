@@ -1,12 +1,10 @@
 "use client";
-import About from "@/Components/About";
 import Footer from "@/Components/Footer";
 import { Header } from "@/Components/Header/Header";
 import { Hero } from "@/Components/Hero";
 import Preloader from "@/Components/Preloader";
-import { SignupFormDemo } from "@/Components/contact-form";
+import { SignupFormDemo } from "@/Components/contactForm";
 import { Macbook } from "@/Components/macbook-display";
-import { BackgroundGradientDemo } from "@/Components/project-cards";
 import StickyCursor from "@/Components/stickyCursor";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -15,6 +13,11 @@ import {
   Element,
   animateScroll,
 } from "react-scroll";
+import dynamic from 'next/dynamic'
+
+const AboutComponent = dynamic(() => import('@/Components/About'), { ssr: false });
+
+const ProjectComponent = dynamic(() => import('@/Components/project-cards'), { ssr: false });
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -54,13 +57,13 @@ export default function Home() {
         <Hero />
       </Element>
       <Element name="About" className="element">
-        <About />
+        <AboutComponent />
       </Element>
       <Element name="Skills" className="element">
         <Macbook />
       </Element>
       <Element name="Project" className="element">
-        <BackgroundGradientDemo />
+        <ProjectComponent />
       </Element>
       <Element name="Contact" className="element">
         <SignupFormDemo />

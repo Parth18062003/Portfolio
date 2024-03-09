@@ -2,7 +2,7 @@
 "use client";
 import * as React from "react";
 import { cn } from "@/utils/cn";
-import { useMotionTemplate, useMotionValue, motion } from "framer-motion";
+import { useMotionTemplate, useMotionValue, m } from "framer-motion";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
@@ -25,7 +25,7 @@ export interface InputProps
       }
   
       return (
-        <motion.div
+        <m.div
           style={{
             background: useMotionTemplate`
           radial-gradient(
@@ -54,7 +54,7 @@ export interface InputProps
             ref={ref}
             {...props}
           />
-        </motion.div>
+        </m.div>
       );
     }
   );
@@ -78,7 +78,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     }
 
     return (
-      <motion.div
+      <m.div
         style={{
           background: useMotionTemplate`
         radial-gradient(
@@ -91,9 +91,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setVisible(true)}
         onMouseLeave={() => setVisible(false)}
-        className="p-[2px] rounded-lg transition duration-300 group/input"
+        className="p-[2px] rounded-lg transition duration-300"
       >
         <input
+        suppressHydrationWarning={true}
           type={type}
           className={cn(
             `flex h-10 w-full border-none bg-gray-50 dark:bg-zinc-800 text-black dark:text-white shadow-input rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent 
@@ -108,7 +109,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         />
-      </motion.div>
+      </m.div>
     );
   }
 );
