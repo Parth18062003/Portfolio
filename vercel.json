@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/build.css",
+        "destination": "/public/build.css"
+      }
+    ]
+  }
+  
