@@ -20,7 +20,7 @@ export function ThreeDCard() {
             width={1000}
             className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
             alt="Nah I'd win"
-            priority={true}
+            loading="lazy"
           />
         </CardItem>
       </CardBody>

@@ -1,10 +1,6 @@
-import dynamic from "next/dynamic";
-import React, { useEffect } from "react";
-import { Link, Events, scrollSpy } from "react-scroll";
-
-const ToggleComponent = dynamic(() => import("@/Aceternity/toggle-button"), {
-  ssr: false,
-});
+import Toggle from "@/Aceternity/toggle-button";
+import React from "react";
+import { Link } from "react-scroll";
 
 const TopHeader = () => {
   const handleSetActive = (to: String) => {
@@ -28,7 +24,7 @@ const TopHeader = () => {
           >
             PK
           </Link>
-          <ToggleComponent />
+          <Toggle />
         </div>
         <div className="lg:flex flex-row flex-1 hidden items-center  justify-center space-x-8 lg:space-x-14 text-sm text-customblack dark:text-customwhite font-medium hover:text-gray-600 dark:hover:text-dimwhite transition duration-200">
           <Link

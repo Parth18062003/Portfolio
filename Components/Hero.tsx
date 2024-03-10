@@ -8,7 +8,8 @@ export function Hero() {
   const { theme } = useTheme();
   const particleColor = theme === 'light' ? '#000000' : '#FFFFFF'; 
   return (
-    <div className=" h-[40rem] w-full bg-customwhite dark:bg-customblack flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="relative -translate-y-24">
+          <div className=" h-[53rem] w-full bg-customwhite dark:bg-customblack flex flex-col items-center justify-center overflow-hidden rounded-md">
       <BackgroundCellCore />
       <h1 className="mt-12 md:text-7xl text-7xl lg:text-9xl font-bold text-center text-neutral-900 dark:text-dimwhite relative z-40">
         Parth Kadam
@@ -33,6 +34,7 @@ export function Hero() {
         {/* Radial Gradient to prevent sharp edges */}
         <div className="absolute inset-0 w-full h-full bg-customwhite dark:bg-customblack [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
       </div>
+    </div>
     </div>
   );
 }

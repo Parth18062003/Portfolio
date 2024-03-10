@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-gray-200 dark:bg-neutral-950 translate-y-80 sm:translate-y-40">
+      <footer className="bg-gray-200 dark:bg-neutral-950 translate-y-40">
         <div className="mx-auto max-w-3xl py-8">
           <div className="flex justify-center">
             <h3 className="text-black dark:text-white text-3xl">Parth Kadam</h3>
@@ -89,7 +89,7 @@ const Footer = () => {
 
             <li>
               <a
-                href="www.linkedin.com/in/parth-kadam-7b27a2224"
+                href="https://www.linkedin.com/in/parth-kadam-7b27a2224/"
                 target="_blank"
               >
                 <span className="sr-only">Linkedin</span>

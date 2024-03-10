@@ -60,7 +60,7 @@ export const BackgroundBeams = React.memo(
     return (
       <div
         className={cn(
-          "absolute  h-full w-full inset-0  [mask-size:40px] [mask-repeat:no-repeat] flex items-center justify-center",
+          "hidden sm:flex absolute  h-full w-full inset-0  [mask-size:40px] [mask-repeat:no-repeat] items-center justify-center",
           className
         )}
       >
@@ -130,7 +130,7 @@ export const BackgroundBeams = React.memo(
               <stop offset="0.43594" stopColor="white" stopOpacity="0"></stop>
             </radialGradient>
           </defs>
-        </svg>
+        </svg> 
       </div>
     );
   }

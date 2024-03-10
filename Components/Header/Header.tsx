@@ -9,11 +9,7 @@ import blackclose from "../../public/Assets/blackClose.svg";
 import { Link } from "react-scroll";
 import TopHeader from "./TopHeader";
 import { useTheme } from "next-themes";
-import dynamic from "next/dynamic";
-
-const ToggleComponent = dynamic(() => import("@/Aceternity/toggle-button"), {
-  ssr: false,
-});
+import Toggle from "@/Aceternity/toggle-button";
 
 export function Header() {
   const { theme } = useTheme();
@@ -56,7 +52,7 @@ export function Header() {
     <>
       <div className="w-full flex items-center justify-between">
         <div className="block sm:hidden z-50">
-          <ToggleComponent />
+          <Toggle />
         </div>
         <TopHeader />
         <FloatingNav navItems={navItems} />
@@ -98,6 +94,7 @@ export function Header() {
                 </li>
               ))}
               <Link
+                href="#Contact"
                 to="Contact"
                 spy={true}
                 smooth={true}

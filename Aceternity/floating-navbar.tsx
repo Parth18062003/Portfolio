@@ -9,7 +9,7 @@ import {
   domAnimation,
 } from "framer-motion";
 import { cn } from "@/utils/cn";
-import { Link, Events, scrollSpy } from "react-scroll";
+import { Link } from "react-scroll";
 
 export const FloatingNav = ({
   navItems,
@@ -78,6 +78,8 @@ export const FloatingNav = ({
                 offset={10}
                 duration={navItem.duration}
                 onSetActive={handleSetActive}
+                aria-label={`Skip to ${navItem.name}`} 
+                tabIndex={0}
                 className={cn(
                   "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
                 )}
@@ -86,6 +88,7 @@ export const FloatingNav = ({
               </Link>
             ))}
             <Link
+              href="#Contact"
               to="Contact"
               spy={true}
               smooth={true}

@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
     <div className="fixed bottom-8 right-8 z-50">
-        <a onClick={scrollToTop} className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white text-4xl transition duration-300 ease-in-out hover:bg-gray-700 hover:text-gray-300"> 
+        <a href="#Hero" onClick={scrollToTop} aria-label="Scroll to top" className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white text-4xl transition duration-300 ease-in-out hover:bg-gray-700 hover:text-gray-300"> 
           <TbChevronUp />
         </a>
       </div> 

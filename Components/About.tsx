@@ -28,12 +28,13 @@ const About: React.FC = () => {
           animate={{ opacity: 1 }}
           style={{ opacity }}
           ref={ref}
+          className="relative -translate-y-24"
         >
           <div className="text-center text-customblack dark:text-dimwhite font-semibold text-4xl sm:text-7xl translate-y-10">
             About me
           </div>
           <div className="container absolute mx-auto px-4 py-8 lg:py-16 lg:flex lg:items-center max-h-[90vh] ">
-            <div className="lg:w-1/2 p-4 sm:-translate-y-10">
+            <div className="lg:w-1/2 p-4 translate-y-10 xl:-translate-y-10">
               <div className="text-black dark:text-white ">
                 <Typewriter />
               </div>

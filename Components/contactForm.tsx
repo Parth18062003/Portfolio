@@ -5,7 +5,7 @@ import { Input, Textarea } from "../Aceternity/Form/input";
 import { cn } from "@/utils/cn";
 import { BackgroundBeams } from "@/Aceternity/background-beams";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import {
   useScroll,
   useTransform,
@@ -14,12 +14,7 @@ import {
   domAnimation,
 } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import dynamic from "next/dynamic";
-
-const CustomButtonComponent = dynamic(
-  () => import("@/Aceternity/customButton"),
-  { ssr: false }
-);
+import CustomButton from "@/Aceternity/customButton";
 
 export function SignupFormDemo() {
   const [formData, setFormData] = useState({
@@ -152,6 +147,7 @@ export function SignupFormDemo() {
           animate={{ opacity: 1 }}
           style={{ opacity }}
           ref={ref}
+          className="relative"
         >
           <div className="h-[40rem] w-full rounded-md dark:bg-neutral-950 relative flex flex-col items-center justify-center antialiased translate-y-20">
             <div className="text-center text-gradientDark dark:text-gradient font-semibold text-4xl sm:text-6xl">
@@ -253,7 +249,7 @@ export function SignupFormDemo() {
                     </span>
                   )}
                 </LabelInputContainer>
-                <CustomButtonComponent />
+                <CustomButton />
               </form>
             </div>
             <BackgroundBeams />
