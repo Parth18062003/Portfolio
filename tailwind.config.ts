@@ -57,7 +57,7 @@ const config: Config = {
       );
     },
   ],
-  options: {
+/*   options: {
     safelist: [
       // List each class as a separate string
       "inset-x-20",
@@ -202,7 +202,10 @@ const config: Config = {
       "[transform-style:preserve-3d]",
       "xl:-translate-y-10",
     ],    
-  },
+  }, */
+  purge: {
+    enabled: false
+  }
 };
 export default config;
 
