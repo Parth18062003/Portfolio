@@ -9,7 +9,7 @@ const TopHeader = () => {
 
   return (
     <>
-      <nav className="hidden sm:flex flex-row items-center justify-between py-8 max-w-[83rem] mx-auto px-8 w-full relative z-[50]">
+      <nav className="hidden sm:flex flex-row items-center justify-between py-8 max-w-[83rem] mx-auto px-8 w-full relative z-50">
         <div className="flex flex-row justify-between items-center space-x-1">
           <Link
             href="#Hero"

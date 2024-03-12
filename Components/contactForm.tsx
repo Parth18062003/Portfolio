@@ -5,6 +5,7 @@ import { Input, Textarea } from "../Aceternity/Form/input";
 import { cn } from "@/utils/cn";
 import { BackgroundBeams } from "@/Aceternity/background-beams";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   useScroll,

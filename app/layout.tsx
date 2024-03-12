@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   keywords: "web developer, full stack developer, front end developer, back end developer, mern stack,Blockchain developer, Intern, Portfolio, Resume",
   other: {
     'theme-color': '#0c0c0c',
-    'og:image': '/Assets/metaImage.png',
+    'og:image': 'https://i.ibb.co/MVf92BP/meta-Image.png',
     "og:type": "website",
   },
 };

@@ -60,13 +60,13 @@ export function Header() {
           <Image
             src={toggle ? lightclose : lightmenu}
             alt="menu"
-            className="w-[28px] h-[28px] mx-4 object-contain cursor-pointer z-[80]"
+            className="w-[28px] h-[28px] mx-4 object-contain cursor-pointer z-50"
             onClick={toggleMenu}
           />
           <div
             className={`${
               toggle ? "flex" : "hidden"
-            } p-6 bg-black absolute top-10 right-0 mx-4 my-2 min-w-[140px] rounded-3xl sidebar z-[1000] `}
+            } p-6 bg-black absolute top-10 right-0 mx-4 my-2 min-w-[140px] rounded-3xl sidebar z-50 `}
           >
             <ul className="list-none flex justify-end items-start flex-1 flex-col">
               {navItems.map((navItem, idx) => (
