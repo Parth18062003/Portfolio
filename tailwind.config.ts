@@ -203,9 +203,6 @@ const config: Config = {
       "xl:-translate-y-10",
     ],    
   }, */
-  purge: {
-    enabled: false
-  }
 };
 export default config;
 

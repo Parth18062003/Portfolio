@@ -9,7 +9,7 @@ import { useTheme } from "next-themes";
 
 export function ThreeDCard() {
   const { theme } = useTheme();
-  const src = theme === 'light' ? Gojo2 : Gojo; 
+  const src = theme === 'light' ? "Gojo_byrlvr.webp" : "MeFr_ggjzz8.webp"; 
   return (
     <CardContainer className="inter-var">
       <CardBody className="relative group/card  dark:hover:shadow-2xl dark:hover:shadow-gray-400/[0.1] dark:bg-customblack dark:border-white/[0.2] border-black/[0.1] w-[20rem] sm:w-[30rem] h-auto rounded-xl p-6 border  ">

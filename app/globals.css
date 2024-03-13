@@ -84,7 +84,7 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: center;
-  mask-image: url('../public/Assets/mask.svg');
+  mask-image: url('https://res.cloudinary.com/dse9scwk1/image/upload/v1710335821/Assets/mask_tnlvfl.svg');
   mask-position: 50% center;
   mask-repeat: no-repeat;
 }

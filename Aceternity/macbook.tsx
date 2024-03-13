@@ -28,7 +28,7 @@ export const MacbookScroll = ({
   const [isMobile, setIsMobile] = useState(false);
 
   const { theme } = useTheme();
-  const baseSrc = theme === "light" ? base : darkbase;  
+  const baseSrc = theme === "light" ? "base_cbotkh" : "darkbase_huphjd";  
   
   useEffect(() => {
     if (window && window.innerWidth < 768) {
@@ -147,7 +147,7 @@ export const Lid = ({
       >
         <div className="absolute inset-0 bg-[#272729] rounded-lg" />
         <Image
-          src={skills}
+          src="skills-logos_nlqcrn"
           alt="programming logos"
           width={1400}
           height={1400}

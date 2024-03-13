@@ -34,42 +34,42 @@ export function BackgroundGradientDemo() {
 
   const data = [
     {
-      src: image2,
+      src: "AiSummarizer_i4tq2m",
       title: "E-commerce",
       description: "Description 1",
       link1: "Button 1",
       link2: "https://github.com/Parth18062003/E-commerce-using-MERN-Stack",
     },
     {
-      src: image2,
+      src: "AiSummarizer_i4tq2m",
       title: "Restaurant Reservation",
       description: "Description 2",
       link1: "Button 1",
       link2: "https://github.com/Parth18062003/Restaurant-Reservation-Website-using-Next-JS",
     },
     {
-      src: image2,
+      src: "AiSummarizer_i4tq2m",
       title: "Hotel Management",
       description: "Description 1",
       link1: "Button 1",
       link2: "https://github.com/Parth18062003/Hotel-Management-Site",
     },
     {
-      src: image2,
+      src: "AiSummarizer_i4tq2m",
       title: "AI Youtube Summarizer",
       description: "Description 2",
       link1: "Button 1",
       link2: "https://github.com/Parth18062003/Youtube-Extension-",
     },
     {
-      src: image2,
+      src: "AiSummarizer_i4tq2m",
       title: "Blockchain based storage",
       description: "Description 1",
       link1: "Button 1",
       link2: "Button 2",
     },
     {
-      src: image2,
+      src: "AiSummarizer_i4tq2m",
       title: "Social Media Website",
       description: "Description 2 lorem ",
       link1: "Button 1",

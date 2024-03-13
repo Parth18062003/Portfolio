@@ -13,8 +13,8 @@ import Toggle from "@/Aceternity/toggle-button";
 
 export function Header() {
   const { theme } = useTheme();
-  const lightclose = theme === "light" ? blackclose : close;
-  const lightmenu = theme === "light" ? blackmenu : menu;
+  const lightclose = theme === "light" ? "blackClose_xm9ahc.svg" : "close_bqvsyy.svg";
+  const lightmenu = theme === "light" ? "blackmenu_njqy8g.svg" : "menu_mp0x3m.svg";
   const [toggle, setToggle] = useState(false);
   const [active, setActive] = useState("Home");
   const navItems = [
