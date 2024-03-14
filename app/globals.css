@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-start-rgb: 255, 250, 250;
+  --background-end-rgb: 255, 250, 250;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-start-rgb: 12, 12, 12;
+    --background-end-rgb: 12, 12, 12;
+  }
+}
+
+body {
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.text-gradient {
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #def3fa 0.89%,
+    #bef3f5 17.23%,
+    #9dedf0 42.04%,
+    #7de7eb 55.12%,
+    #5ce1e6 71.54%,
+    #33bbcf 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradientDark {
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #a8c9e6 0.89%,
+    #9ec5dc 17.23%,
+    #9dcff0 42.04%,
+    #7db6eb 55.12%,
+    #5ca3e6 71.54%,
+    #338bcf 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient {
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #def9fa 0.89%,
+    #bef3f5 17.23%,
+    #9dedf0 42.04%,
+    #7de7eb 55.12%,
+    #5ce1e6 71.54%,
+    #33bbcf 100%
+  );
+}
+
+.container{
+  position: relative;
+  height: 300vh;
+}
+
+.stickyMask{
+  display: flex;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  mask-image: url('https://res.cloudinary.com/dse9scwk1/image/upload/v1710335821/Assets/mask_tnlvfl.svg');
+  mask-position: 50% center;
+  mask-repeat: no-repeat;
+}
+
+.stickyMask video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
