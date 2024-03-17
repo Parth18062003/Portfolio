@@ -150,7 +150,7 @@ export function SignupFormDemo() {
           ref={ref}
           className="relative"
         >
-          <div className="h-[40rem] w-full rounded-md dark:bg-neutral-950 relative flex flex-col items-center justify-center antialiased translate-y-20">
+          <div className="h-[40rem] w-full rounded-md dark:bg-customblack relative flex flex-col items-center justify-center antialiased translate-y-20">
             <div className="text-center text-gradientDark dark:text-gradient font-semibold text-4xl sm:text-6xl">
               Contact
             </div>

@@ -1,11 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FloatingNav } from "../../Aceternity/floating-navbar";
 import Image from "next/image";
-import menu from "../../public/Assets/menu.svg";
-import blackmenu from "../../public/Assets/blackmenu.svg";
-import close from "../../public/Assets/close.svg";
-import blackclose from "../../public/Assets/blackClose.svg";
 import { Link } from "react-scroll";
 import TopHeader from "./TopHeader";
 import { useTheme } from "next-themes";

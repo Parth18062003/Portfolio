@@ -61,18 +61,18 @@ export function BackgroundGradientDemo() {
       link2: "https://github.com/Parth18062003/Youtube-Extension-",
     },
     {
-      src: "AiSummarizer_i4tq2m",
+      src: "blockchain_wpvm5i",
       title: "Blockchain based storage",
       description: "Blockchain based storage system using IPFS and Ethereum. MetaMask and Solidity for Eth.",
       link1: "Button 1",
       link2: "Button 2",
     },
     {
-      src: "AiSummarizer_i4tq2m",
-      title: "Social Media Website",
-      description: "Description 2 lorem ",
+      src: "LiveEditor_fw1b8v",
+      title: "Collaborative Editor",
+      description: "Collaborative text editor using Next, LiveBlocks, Yjs and TipTap.",
       link1: "Button 1",
-      link2: "Button 2",
+      link2: "https://github.com/Parth18062003/LiveEditor.git",
     },
   ];
 
