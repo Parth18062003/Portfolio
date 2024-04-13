@@ -61,11 +61,11 @@ export function BackgroundGradientDemo() {
       link2: "https://github.com/Parth18062003/Youtube-Extension-",
     },
     {
-      src: "blockchain_wpvm5i",
+      src: "Blockchain_Storage_cqgy0c",
       title: "Blockchain based storage",
       description: "Blockchain based storage system using IPFS and Ethereum. MetaMask and Solidity for Eth.",
       link1: "Button 1",
-      link2: "Button 2",
+      link2: "https://github.com/Parth18062003/Blockchain_Storage",
     },
     {
       src: "LiveEditor_fw1b8v",
